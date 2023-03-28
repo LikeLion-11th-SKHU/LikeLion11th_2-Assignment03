@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Hahmlet-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+        /* 5번 가이드라인 */
+}
+
+body {
+    font-family: 'Hahmlet-Regular';
+    background-color: #EAEAEA;
+        /* 4번 가이드라인 */
+}
+
+header, nav {
+    text-align: center;
+}
