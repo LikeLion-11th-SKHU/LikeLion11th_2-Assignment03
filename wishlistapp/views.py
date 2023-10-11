@@ -42,6 +42,11 @@ def wishlist(request):
     
     return render(request, 'wishlist.html', {'wishlists' : wishlists})
 
+#과제2 작성한 글
+def bloglist(request):
+    blogs = Blog.objects
+    return render(request, 'bloglist.html', {'blogs':blogs})
+
 @login_required    
 def add_to_wishlist(request, post_id):
     post = get_object_or_404(Blog, pk=post_id)
