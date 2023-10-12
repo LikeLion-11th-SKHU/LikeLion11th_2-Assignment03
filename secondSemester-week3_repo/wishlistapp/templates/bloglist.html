@@ -6,7 +6,7 @@
 
 {% block content %}
     <h2>{{user.username}}님이 작성한 글</h2>
-    {% for blogs in blogs.all %}
+    {% for blogs in blogslist %}
     <h3><a href="{% url 'detail' blogs.id %}">{{ blogs.title }}</a></h3>
     {% endfor %}
 {% endblock %}
