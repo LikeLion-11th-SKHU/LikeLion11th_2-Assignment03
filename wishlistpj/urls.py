@@ -13,6 +13,13 @@ urlpatterns = [
     path('detail/<str:id>/', wishlistapp.views.detail, name = 'detail'),
     
     path('user/', include('userapp.urls')),
-
+    
+    #실습
+    path('wishlist', wishlistapp.views.wishlist, name='wishlist'),
+    path('add_to_wishlist/<int:post_id>', wishlistapp.views.add_to_wishlist, name='add_to_wishlist'),
+    path('add_from_wishlist/<int:post_id>', wishlistapp.views.remove_from_wishlist, name='remove_from_wishlist'),
+   
+    #과제
+    path('collection/', wishlistapp.views.collection, name='collection'),
 
 ]

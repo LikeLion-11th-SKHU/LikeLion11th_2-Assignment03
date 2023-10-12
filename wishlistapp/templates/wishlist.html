@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+{% if user.is_active %}
+  <h2>{{ user.username }}님의 관심목록</h2>
+  {% for item in wishlists %}
+    <a href="{% url 'detail' item.post.id %}" >{{ item.post.title }}</a>
+    <!-- 과제 -->
+    <form method="POST" action="{% url 'remove_from_wishlist' blog.id %}">
+        {% csrf_token %}
+        <button type="submit">삭제</button>
+        </form>
+    <hr>
+  {% empty %}
+    <p>관심목록이 비어있습니다</p>
+  {% endfor %}
+{% else %}
+  <h1>로그인하면 볼 수 있는 페이지입니다.</h1>
+{% endif %}
+
+{% endblock %}
