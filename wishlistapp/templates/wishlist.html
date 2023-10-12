@@ -6,11 +6,9 @@
   <h2>{{ user.username }}님의 관심목록</h2>
   {% for item in wishlists %}
     <a href="{% url 'detail' item.post.id %}" >{{ item.post.title }}</a>
-
-    <form method="POST" action="{% url 'remove_from_wishlist' blog.id %}">
-        {% csrf_token %}
-        <button type="submit">삭제</button>
-        </form>
+    <form method="POST" action="{% url 'remove_from_wishlist' item.post.id %}">
+      {%csrf_token %}
+      <button type="submit">찜 삭제</button>
     <hr>
   {% empty %}
     <p>관심목록이 비어있습니다</p>
