@@ -10,7 +10,7 @@
     <h3>{{ blog.title }}</h3>
     <p>{{ blog.body }}</p>
 
-    <!-- 찜목록 -->
+
 {% if user.is_authenticated %}
 {% if not already_in_wishlist %}
     <form method="POST" action="{% url 'add_to_wishlist' blog.id %}">
@@ -26,5 +26,5 @@
 {% else %}
 <p><a href="{% url 'login' %}">log in</a></p>
 {% endif %}
-<!-- 찜목록 -->
+
 {% endblock %}
