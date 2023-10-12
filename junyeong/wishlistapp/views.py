@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from wishlistapp.forms import BlogForm
 from .models import Blog, Wishlist
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
+from django.contrib import messages
 
 
 # Create your views here.
@@ -10,7 +12,11 @@ def index(request):
 
 
 def new(request):
-    return render(request, "new.html")
+    if request.user.is_authenticated:
+        return render(request, "new.html")
+    else:
+        messages.info(request, "로그인을 해야 글 작성이 가능합니다.")
+        return redirect("login")
 
 
 def create(request):
