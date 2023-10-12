@@ -42,7 +42,9 @@ def wishlist(request) :
     return render(request, 'wishlist.html', {'wishlists': wishlists})
 
 def bloglist(request):  #과제
-    blogs = Blog.objects
+    user = request.user
+    blogs = Blog.objects.filter(user=user)
+    
     return render(request, 'bloglist.html', {'blogs':blogs})
 
 @login_required    
