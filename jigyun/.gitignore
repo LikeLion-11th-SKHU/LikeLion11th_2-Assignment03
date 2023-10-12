@@ -14,7 +14,10 @@ secrets.json
 .vscode/
 
 # Mac
-.DS_STORE
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.
