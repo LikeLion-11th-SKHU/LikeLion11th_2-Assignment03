@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<h2>{{ user.username }}님의 작성글</h2>
+<div>
+  {% for post in myposts %}
+  <a href="{% url 'detail' post.id %}" >{{ post.title }}</a>
+
+  <br>
+  {% empty %}
+    <p>작성글이 아직 없습니다.</p>
+  {% endfor %}
+</div>
+
+{% endblock %}
